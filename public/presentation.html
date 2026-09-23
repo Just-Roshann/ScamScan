@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScamScan — Hackathon Pitch & Team Study Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --danger: #dc2626;
+      --warning: #d97706;
+      --success: #16a34a;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px;
+      font-size: 14.5px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Header Bar */
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: white;
+      padding: 24px 30px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.2);
+    }
+
+    .header-title h1 {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-title p {
+      color: #94a3b8;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .print-btn {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .print-btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    /* Section Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 26px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+      break-inside: avoid;
+    }
+
+    .card h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .pitch-box {
+      background: #eff6ff;
+      border-left: 4px solid var(--primary);
+      padding: 14px 18px;
+      border-radius: 0 10px 10px 0;
+      margin: 12px 0 18px;
+      font-size: 15px;
+      font-weight: 500;
+      color: #1e3a8a;
+    }
+
+    /* Workflow Diagram */
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .pipe-step {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      text-align: center;
+      position: relative;
+    }
+
+    .pipe-number {
+      width: 24px;
+      height: 24px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .pipe-title {
+      font-weight: 700;
+      font-size: 13px;
+      color: #1e293b;
+      margin-bottom: 4px;
+    }
+
+    .pipe-desc {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Two column grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .feature-item {
+      background: #f8fafc;
+      border: 1px solid #edf2f7;
+      padding: 12px 14px;
+      border-radius: 8px;
+    }
+
+    .feature-item h4 {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .feature-item p {
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 13px;
+    }
+
+    th, td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: #334155;
+    }
+
+    /* Q&A Items */
+    .qa-box {
+      margin-bottom: 14px;
+      padding: 12px 16px;
+      background: #fdfefe;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .qa-q {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 13.5px;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+
+    .qa-q::before {
+      content: "Q:";
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .qa-a {
+      font-size: 13px;
+      color: #334155;
+      padding-left: 20px;
+    }
+
+    /* Script Timeline */
+    .timeline-step {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .time-badge {
+      background: #0f172a;
+      color: white;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      height: fit-content;
+      white-space: nowrap;
+      font-weight: 700;
+    }
+
+    .step-content strong {
+      display: block;
+      color: #0f172a;
+      font-size: 13.5px;
+      margin-bottom: 2px;
+    }
+
+    .step-content p {
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+
+    /* Print media query */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+        font-size: 12px;
+        color: black;
+      }
+      .container {
+        max-width: 100%;
+      }
+      .print-btn {
+        display: none;
+      }
+      .header-bar {
+        background: #1e293b !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        padding: 16px 20px;
+        margin-bottom: 14px;
+      }
+      .card {
+        box-shadow: none;
+        border: 1px solid #cbd5e1;
+        padding: 14px 18px;
+        margin-bottom: 12px;
+        break-inside: avoid;
+      }
+      .pipeline {
+        gap: 8px;
+      }
+      .pipe-step, .feature-item, .qa-box {
+        background: white !important;
+        border: 1px solid #cbd5e1;
+      }
+      .pitch-box {
+        background: #f0f7ff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="header-bar">
+    <div class="header-title">
+      <h1>🛡️ ScamScan — Hackathon Pitch & Team Guide</h1>
+      <p>PS-008: AI-Powered Scam & Phishing Detection System</p>
+    </div>
+    <button class="print-btn" onclick="window.print()">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2m-12 0v4h12v-4M6 14h12"></svg>
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <!-- 1. The 10-Second Elevator Pitch -->
+  <div class="card">
+    <h2>🎯 1. What is ScamScan? (The 10-Second Pitch)</h2>
+    <div class="pitch-box">
+      "ScamScan is like a digital security guard for your family. You paste any weird message, email, website link, or upload a WhatsApp screenshot — and within 0.3 seconds, it gives you a simple 0 to 100 Risk Score, explains exactly why it’s dangerous in plain English, highlights the fake parts, and gives you official 1-click Indian cyber helplines (1930 & Chakshu)."
+    </div>
+    <p style="font-size: 13px; color: var(--text-muted);">
+      <strong>The Problem:</strong> Over ₹1,750 Crores was lost to digital fraud in India in early 2024 alone. Ordinary citizens are bombarded with fake SBI KYC messages, electricity cutoff threats, digital arrest scams, and part-time job lures. Existing antivirus tools only block known malware files — they are totally blind to social engineering, fake urgency, and Hinglish deception.
+    </p>
+  </div>
+
+  <!-- 2. The 4-Step How It Works Pipeline -->
+  <div class="card">
+    <h2>⚡ 2. How It Works (The 4-Step Flow)</h2>
+    <div class="pipeline">
+      <div class="pipe-step">
+        <div class="pipe-number">1</div>
+        <div class="pipe-title">Any Input</div>
+        <div class="pipe-desc">Text, Email, Link, Live Website, or Mobile Screenshot (in-browser OCR).</div>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-number">2</div>
+        <div class="pipe-title">Dual Engine</div>
+        <div class="pipe-desc">Fast Rule Engine checks patterns + Groq LLM evaluates tone, urgency, & intent.</div>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-number">3</div>
+        <div class="pipe-title">Fusion Scoring</div>
+        <div class="pipe-desc">Fuses deterministic rules + AI reasoning. High-risk combos floor at Dangerous.</div>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-number">4</div>
+        <div class="pipe-title">Plain Action</div>
+        <div class="pipe-desc">Risk Gauge (0-100), highlighted evidence, and instant 1930 report generator.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Tech Stack & How We Used It -->
+  <div class="card">
+    <h2>💻 3. Tech Stack & Implementation Details</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Layer</th>
+          <th>Technology</th>
+          <th>What It Does in Simple Words</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Frontend</strong></td>
+          <td>React + Vite + TailwindCSS</td>
+          <td>Sleek, responsive dark/light UI. Smooth animations with Framer Motion, accessible gauge charts, and instant tabs.</td>
+        </tr>
+        <tr>
+          <td><strong>Screenshot OCR</strong></td>
+          <td>Tesseract.js (Client-side)</td>
+          <td>Reads text from WhatsApp/SMS screenshots right inside the browser. Zero image upload delay, 100% private.</td>
+        </tr>
+        <tr>
+          <td><strong>Backend API</strong></td>
+          <td>Python 3.11 + FastAPI</td>
+          <td>High-speed asynchronous REST API. Validates schemas with Pydantic and returns full analysis in under 300ms.</td>
+        </tr>
+        <tr>
+          <td><strong>Fast AI Engine</strong></td>
+          <td>Groq Cloud (LPU Inference)</td>
+          <td>Executes ultra-low latency LLMs (GPT-OSS / Llama) in ~80ms. Understands deception, tone, and Hinglish.</td>
+        </tr>
+        <tr>
+          <td><strong>Rule Engine</strong></td>
+          <td>Custom Python Heuristics</td>
+          <td>Brand spoofing (Levenshtein distance), shady TLD check (.xyz, .top), regex for OTP/UPI, and 12 scam dictionaries.</td>
+        </tr>
+        <tr>
+          <td><strong>Website Inspector</strong></td>
+          <td>httpx + BeautifulSoup</td>
+          <td>Safely fetches live websites without executing malicious JavaScript. Detects hidden password fields and domain spoofing.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4. Our USPs -->
+  <div class="card">
+    <h2>🏆 4. Why ScamScan Wins (Our USPs)</h2>
+    <div class="grid-2">
+      <div class="feature-item">
+        <h4>1. True Hybrid Architecture</h4>
+        <p>Pure AI hallucinates; pure rules miss context. We fuse both. Transparent rule evidence + contextual AI reasoning.</p>
+      </div>
+      <div class="feature-item">
+        <h4>2. Zero-Downtime Resilience</h4>
+        <p>If Groq AI has network lag or rate limits, the app never crashes. The Rule Engine steps in with full protection.</p>
+      </div>
+      <div class="feature-item">
+        <h4>3. Anti-Hallucination Filter</h4>
+        <p>Every reason produced by the AI is strictly verified against the actual text. The AI cannot make up facts.</p>
+      </div>
+      <div class="feature-item">
+        <h4>4. Tailored for Indian Frauds</h4>
+        <p>Detects KYC expiration, Part-Time YouTube tasks, Digital Arrest CBI threats, Electricity disconnection, and Fake UPI.</p>
+      </div>
+      <div class="feature-item">
+        <h4>5. Action-Oriented, Not Just Informative</h4>
+        <p>Doesn't just say "Be careful". Generates a 1-click police complaint report and links directly to 1930 and Chakshu.</p>
+      </div>
+      <div class="feature-item">
+        <h4>6. Privacy First</h4>
+        <p>No passwords or bank credentials stored. Content is analyzed in-memory; only anonymized preview hashes are kept.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Judge Q&A Cheat Sheet -->
+  <div class="card">
+    <h2>❓ 5. Anticipated Judge Questions & Winning Answers</h2>
+
+    <div class="qa-box">
+      <div class="qa-q">"Why not just give the message to ChatGPT with a simple prompt?"</div>
+      <div class="qa-a">
+        <strong>Answer:</strong> "Three reasons: <strong>Speed, Reliability, and Cost.</strong> ChatGPT takes 3-5 seconds and can hallucinate fake reasons. We do it in <strong>250ms</strong>. More importantly, if an LLM is asked about a brand new scam domain, it has no web scanner or domain entropy rules. Our system combines deterministic brand lookalike algorithms with LLMs, and works even when the AI API is offline."
+      </div>
+    </div>
+
+    <div class="qa-box">
+      <div class="qa-q">"What if scammers use innocent wording with a brand-new phishing domain?"</div>
+      <div class="qa-a">
+        <strong>Answer:</strong> "Our URL inspection pipeline decomposes the domain into TLD, subdomains, Shannon entropy, and Levenshtein distance against 40+ trusted brands (SBI, HDFC, FedEx). Even if the text is polite, an anomalous domain like <code>sbi-netbanking.xyz</code> triggers our critical rule override, flooring the score at Dangerous immediately."
+      </div>
+    </div>
+
+    <div class="qa-box">
+      <div class="qa-q">"Is it safe to analyze a malicious website? Won't your server get compromised?"</div>
+      <div class="qa-a">
+        <strong>Answer:</strong> "Yes, completely safe. We use a sandboxed HTTP client that never executes JavaScript, caps downloads at 1 MB, blocks more than 5 redirects, and sets a strict 3-second timeout. We inspect raw static HTML only."
+      </div>
+    </div>
+
+    <div class="qa-box">
+      <div class="qa-q">"How do you prevent false alarms on innocent urgent emails?"</div>
+      <div class="qa-a">
+        <strong>Answer:</strong> "We eliminated single-word triggers. A word like 'tonight' or 'urgent' alone will never flag danger. A scam verdict requires a dangerous combination — such as urgency PLUS credential requests, or threats PLUS unverified phone numbers."
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. 2-Minute Demo Flow -->
+  <div class="card">
+    <h2>⏱️ 6. Team 2-Minute Pitch & Demo Script</h2>
+    
+    <div class="timeline-step">
+      <div class="time-badge">0:00 - 0:25</div>
+      <div class="step-content">
+        <strong>Hook & Problem</strong>
+        <p>"Every day, millions of Indians receive messages like 'Your electricity will be cut off tonight' or 'Your SBI account is blocked'. Victims panic and lose their life savings. We built ScamScan to solve this."</p>
+      </div>
+    </div>
+
+    <div class="timeline-step">
+      <div class="time-badge">0:25 - 1:10</div>
+      <div class="step-content">
+        <strong>Live Demo: Test a Scam</strong>
+        <p>Click the 'SBI KYC' or 'Part-Time Job' sample chip. Hit Analyze. Watch the Gauge spin to 95+ (Dangerous) in ~200ms. Point out the exact highlighted evidence, reasons, and domain lookalike alert.</p>
+      </div>
+    </div>
+
+    <div class="timeline-step">
+      <div class="time-badge">1:10 - 1:40</div>
+      <div class="step-content">
+        <strong>Show Resilience & Action</strong>
+        <p>Show that it tells the user what to do: click 'Copy Incident Report', and highlight the integrated National Cybercrime 1930 and Chakshu portals.</p>
+      </div>
+    </div>
+
+    <div class="timeline-step">
+      <div class="time-badge">1:40 - 2:00</div>
+      <div class="step-content">
+        <strong>Conclusion & Future Vision</strong>
+        <p>"ScamScan isn't just a prototype; it's a lightweight, explainable, hybrid shield. Next, we are taking this to a Chrome Extension and a WhatsApp bot. Thank you!"</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Future Scope -->
+  <div class="card">
+    <h2>🚀 7. Future Roadmap (What Can Be Improved Next)</h2>
+    <div class="grid-2">
+      <div class="feature-item">
+        <h4>1. WhatsApp & Telegram Bot</h4>
+        <p>Users can forward suspicious messages directly to a WhatsApp bot for instantaneous verdict without visiting a website.</p>
+      </div>
+      <div class="feature-item">
+        <h4>2. Chrome Extension Overlay</h4>
+        <p>Real-time badge warning on WhatsApp Web or Gmail when an incoming message contains phishing markers.</p>
+      </div>
+      <div class="feature-item">
+        <h4>3. Community Threat Feed</h4>
+        <p>Aggregating verified scams into a public crowd-sourced threat database to warn other citizens automatically.</p>
+      </div>
+      <div class="feature-item">
+        <h4>4. Voice Scam Detection</h4>
+        <p>Analyzing audio recordings of IVR and digital arrest telephone calls using Whisper + AI tone analysis.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 24px; padding-bottom: 20px;">
+    ScamScan — Built with ❤️ for Hackathon 2026 • Open Source Cyber Protection
+  </div>
+
+</div>
+
+</body>
+</html>
