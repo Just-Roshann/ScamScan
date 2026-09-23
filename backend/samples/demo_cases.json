@@ -1,0 +1,128 @@
+[
+  {
+    "id": "demo-sbi-kyc",
+    "title": "SBI Urgent KYC Suspension SMS",
+    "type": "message",
+    "content": "Dear Customer, Your SBI NetBanking account will be blocked within 24 hours. Immediately update KYC to avoid suspension: http://sbi-kyc-update.xyz/verify",
+    "expected_verdict": "Dangerous",
+    "expected_type": "bank_kyc",
+    "explanation": "Uses high urgency threat to block account and directs to an unofficial .xyz lookalike domain."
+  },
+  {
+    "id": "demo-power-cut",
+    "title": "Electricity Disconnection Warning",
+    "type": "message",
+    "content": "Dear consumer, your electricity bill is unpaid. Power connection will be disconnected tonight at 9:30 PM. Call electricity officer immediately at 9821456789.",
+    "expected_verdict": "Dangerous",
+    "expected_type": "courier_bill",
+    "explanation": "Threatens same-day utility shutoff and provides an unverified personal phone number."
+  },
+  {
+    "id": "demo-digital-arrest",
+    "title": "CBI Digital Arrest Police Threat",
+    "type": "message",
+    "content": "URGENT NOTICE: CBI and Police cyber cell have issued digital arrest warrant against your Aadhaar number. Legal action initiated. Contact investigating team immediately: 9187654321.",
+    "expected_verdict": "Dangerous",
+    "expected_type": "impersonation",
+    "explanation": "Fictitious 'digital arrest' intimidation tactic designed to create fear and extort payments."
+  },
+  {
+    "id": "demo-telegram-job",
+    "title": "Telegram YouTube Task Part-Time Job",
+    "type": "message",
+    "content": "Work from home part time job! Like YouTube videos and earn ₹5000 daily income. Instant daily payout. Join our telegram task group: https://bit.ly/yt-tasks-payout",
+    "expected_verdict": "Dangerous",
+    "expected_type": "job_task",
+    "explanation": "Classic task-based scam promising excessive daily returns using shortened links."
+  },
+  {
+    "id": "demo-kbc-lottery",
+    "title": "KBC Lucky Draw Lottery Winner",
+    "type": "message",
+    "content": "Congratulations! You have won ₹25,00,000 cash in KBC Lucky Draw 2026. To claim prize, pay registration fee ₹1,500 via UPI: kbcprize@ybl",
+    "expected_verdict": "Dangerous",
+    "expected_type": "lottery_reward",
+    "explanation": "Fake lottery award demanding upfront advance processing fee through a personal UPI address."
+  },
+  {
+    "id": "demo-courier-parcel",
+    "title": "India Post Parcel On Hold",
+    "type": "message",
+    "content": "Your India Post parcel on hold at customs clearance due to incomplete address. Pay ₹25 redelivery fee immediately: https://cutt.ly/ind-parcel",
+    "expected_verdict": "Dangerous",
+    "expected_type": "courier_bill",
+    "explanation": "Impersonates postal service requesting fee for held packages via shortened URL."
+  },
+  {
+    "id": "demo-remote-support",
+    "title": "Bank Tech Support Remote App",
+    "type": "message",
+    "content": "HDFC Bank customer care alert: To re-activate your netbanking, please install AnyDesk or TeamViewer on your phone and share the 9-digit code.",
+    "expected_verdict": "Dangerous",
+    "expected_type": "tech_support",
+    "explanation": "Requests installation of remote desktop software to secretly access the victim's screen and banking OTPs."
+  },
+  {
+    "id": "demo-paypal-spoof-email",
+    "title": "Fake PayPal Invoice Email with Spoofed Sender",
+    "type": "email",
+    "content": "From: PayPal Billing Support <service.alerts928@gmail.com>\nReply-To: refund-desk@attacker-mail.net\nSubject: Invoice #892182 paid for $849.00\nAuthentication-Results: mx.google.com; dkim=fail; spf=softfail\n\nDear customer, You have sent a payment of $849 to CryptoExchange Inc. If this was not you, call immediately at +919876543210 to cancel.",
+    "expected_verdict": "Dangerous",
+    "expected_type": "phishing",
+    "explanation": "SPF/DKIM authentication failure, Reply-To mismatch, and brand impersonation using a free Gmail address."
+  },
+  {
+    "id": "demo-url-paytm-lookalike",
+    "title": "Paytm Lookalike Reward URL",
+    "type": "url",
+    "content": "http://paytmm-rewards.top/claim",
+    "expected_verdict": "Dangerous",
+    "expected_type": "phishing",
+    "explanation": "Typo-squatted Paytm brand name on a high-risk .top TLD over insecure HTTP."
+  },
+  {
+    "id": "demo-url-punycode",
+    "title": "Punycode Homoglyph Domain",
+    "type": "url",
+    "content": "https://xn--googl-fsa.com/login",
+    "expected_verdict": "Suspicious",
+    "expected_type": "phishing",
+    "explanation": "Uses Cyrillic homoglyph characters disguised as a trusted brand name."
+  },
+  {
+    "id": "demo-legit-bank-otp",
+    "title": "Legitimate Bank OTP with Security Warning",
+    "type": "message",
+    "content": "Dear Customer, 629401 is your OTP for transaction of INR 1,250 at Flipkart. Do not share this OTP with anyone, including bank staff.",
+    "expected_verdict": "Looks Safe",
+    "expected_type": "none",
+    "explanation": "Official banking OTP containing proper warning negation preventing credential false positives."
+  },
+  {
+    "id": "demo-legit-amazon-email",
+    "title": "Authentic Amazon Delivery Confirmation",
+    "type": "email",
+    "content": "From: auto-confirm@amazon.in\nSubject: Your order has been dispatched\n\nDear Customer, Your Amazon order #402-8172918 has been shipped and will arrive tomorrow. You can track your package inside your Amazon account or official mobile app.",
+    "expected_verdict": "Looks Safe",
+    "expected_type": "none",
+    "explanation": "Legitimate sender from official amazon.in domain without malicious external links or urgent threats."
+  },
+  {
+    "id": "demo-friend-chat",
+    "title": "Casual Friend Hinglish Message",
+    "type": "message",
+    "content": "Bhai shaam ko milte hain cafe pe. Rohit bhi aayega 7 baje tak. Notes saath le aana.",
+    "expected_verdict": "Looks Safe",
+    "expected_type": "none",
+    "explanation": "Normal interpersonal conversation with no scam indicators, urgency tricks, or payment requests."
+  },
+  {
+    "id": "demo-official-url",
+    "title": "Official State Bank of India Portal",
+    "type": "url",
+    "content": "https://onlinesbi.sbi/portal/home.htm",
+    "expected_verdict": "Looks Safe",
+    "expected_type": "none",
+    "explanation": "Official registered banking domain with HTTPS encryption and no suspicious parameters."
+  }
+]

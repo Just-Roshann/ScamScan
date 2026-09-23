@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-page: #f8fafc;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+  }
+
+  .dark {
+    --bg-page: #0b0f1a;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+  }
+}
+
+html, body, * {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  height: 0px;
+  background: transparent;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-bg-mask {
+  mask-image: radial-gradient(circle at 75% 40%, black 50%, transparent 90%);
+  -webkit-mask-image: radial-gradient(circle at 75% 40%, black 50%, transparent 90%);
+}
+
+.dark .hero-bg-mask {
+  mask-image: radial-gradient(circle at 75% 40%, black 60%, transparent 95%);
+  -webkit-mask-image: radial-gradient(circle at 75% 40%, black 60%, transparent 95%);
+}
