@@ -24,13 +24,13 @@ from app.history import record_scan_result, fetch_recent_scans, calculate_scan_s
 router = APIRouter()
 request_records = defaultdict(deque)
 
-def check_rate_limit(client_ip: str, max_requests: int = 30, window_seconds: int = 60):
+def check_rate_limit(client_ip: str, max_requests: int = 120, window_seconds: int = 60):
     now = time.time()
     records = request_records[client_ip]
     while records and records[0] <= now - window_seconds:
         records.popleft()
     if len(records) >= max_requests:
-        raise HTTPException(status_code=429, detail="Rate limit exceeded. Please wait.")
+        raise HTTPException(status_code=429, detail="Rate limit exceeded. Please wait a moment.")
     records.append(now)
 
 def process_message_input(content: str):
@@ -114,7 +114,10 @@ def analyze_endpoint(request_body: AnalyzeRequest, req: Request):
     rule_score, initial_score = compute_raw_score(signals, ai_response)
     final_score = apply_score_overrides(rule_score, initial_score, signals, ai_response)
     verdict = determine_verdict(final_score)
-    scam_type = ai_response.scam_type if ai_response and ai_response.scam_type != "none" else determine_rule_scam_type(signals)
+    if verdict == "Looks Safe":
+        scam_type = "none"
+    else:
+        scam_type = ai_response.scam_type if ai_response and ai_response.scam_type != "none" else determine_rule_scam_type(signals)
     custom_summary = ai_response.summary if ai_response else None
     summary = generate_verdict_summary(verdict, scam_type, custom_summary)
     ai_actions = ai_response.safe_actions if ai_response else None
@@ -123,7 +126,10 @@ def analyze_endpoint(request_body: AnalyzeRequest, req: Request):
     elapsed_ms = int((time.time() - start_time) * 1000)
     scan_id = str(uuid.uuid4())
 
-    record_scan_result(scan_id, input_type, content, final_score, verdict, scam_type)
+    try:
+        record_scan_result(scan_id, input_type, content, final_score, verdict, scam_type)
+    except Exception:
+        pass
 
     return AnalyzeResponse(
         id=scan_id,

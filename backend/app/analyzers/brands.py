@@ -36,6 +36,12 @@ TRUSTED_BRANDS = {
     "kotak": ["kotak.com"],
     "swiggy": ["swiggy.com"],
     "zomato": ["zomato.com"],
+    "fedex": ["fedex.com"],
+    "dhl": ["dhl.com"],
+    "bluedart": ["bluedart.com"],
+    "dtdc": ["dtdc.in", "dtdc.com"],
+    "delhivery": ["delhivery.com"],
+    "meta": ["meta.com", "facebook.com", "instagram.com"],
 }
 
 SHORTENER_HOSTS = {
@@ -63,6 +69,21 @@ RISKY_TLDS = {
     "live",
     "rest",
     "monster",
+    "online",
+    "site",
+    "space",
+    "fun",
+    "work",
+    "loan",
+    "vip",
+    "link",
+    "pw",
+    "cc",
+    "tk",
+    "ga",
+    "cf",
+    "gq",
+    "ml",
 }
 
 SUSPICIOUS_PATH_WORDS = [
@@ -74,4 +95,20 @@ SUSPICIOUS_PATH_WORDS = [
     "wallet",
     "reward",
     "claim",
+    "free",
+    "prize",
+    "otp",
+    "pin",
+    "auth",
+    "signin",
+    "sign-in",
+    "banking",
+    "account",
+    "confirm",
+    "billing",
+    "invoice",
+    "tracking",
+    "order",
+    "payment",
 ]
+

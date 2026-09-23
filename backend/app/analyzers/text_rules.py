@@ -17,20 +17,58 @@ URGENCY_KEYWORDS = [
     "within 2 hours",
     "action required immediately",
     "expiring today",
-    "tonight",
+    "expires tonight",
+    "tonight only",
+    "act now",
+    "act immediately",
+    "respond immediately",
+    "don't delay",
+    "time is running out",
+    "expires soon",
+    "final notice",
+    "last chance",
+    "only today",
+    "today only",
+    "before it's too late",
+    "do it now",
+    "right away",
+    "as soon as possible",
+    "without delay",
 ]
 
 THREAT_KEYWORDS = [
     "legal action",
     "digital arrest",
     "arrest warrant",
-    "police",
-    "cbi",
+    "police action",
+    "police complaint",
+    "police officer",
+    "cyber police",
+    "delhi police",
+    "mumbai police",
+    "cbi enquiry",
+    "cbi investigation",
+    "cbi case",
     "fir filed",
-    "suspended",
     "court notice",
     "ed investigation",
     "law enforcement",
+    "your account has been compromised",
+    "unauthorized access",
+    "unauthorized transaction",
+    "suspicious activity detected",
+    "security alert",
+    "account locked",
+    "account suspended",
+    "service suspended",
+    "account deactivated",
+    "permanently disabled",
+    "legal proceedings",
+    "penalty",
+    "fine of",
+    "assets seized",
+    "account seized",
+    "funds seized",
 ]
 
 CREDENTIAL_KEYWORDS = [
@@ -45,6 +83,22 @@ CREDENTIAL_KEYWORDS = [
     "card pin",
     "share password",
     "enter your pin",
+    "verify your identity",
+    "confirm your identity",
+    "enter your password",
+    "update your password",
+    "verify your account",
+    "confirm your account",
+    "enter your credentials",
+    "provide your details",
+    "share your details",
+    "bank details",
+    "card number",
+    "card details",
+    "account number",
+    "social security",
+    "login credentials",
+    "sign in to verify",
 ]
 
 REWARD_KEYWORDS = [
@@ -57,6 +111,13 @@ REWARD_KEYWORDS = [
     "claim prize",
     "won reward",
     "crorepati winner",
+    "claim your reward",
+    "selected as winner",
+    "you are selected",
+    "you've been chosen",
+    "exclusive offer for you",
+    "spin and win",
+    "scratch and win",
 ]
 
 PAYMENT_KEYWORDS = [
@@ -66,11 +127,23 @@ PAYMENT_KEYWORDS = [
     "transfer fee",
     "advance fee",
     "refundable deposit",
+    "customs fee",
+    "customs duty",
+    "delivery fee",
+    "unpaid fee",
+    "pending payment",
     "pay ₹",
+    "pay rs",
+    "pay in bitcoin",
+    "send bitcoin",
 ]
 
 KYC_KEYWORDS = [
     "update kyc",
+    "kyc update",
+    "kyc expired",
+    "kyc has expired",
+    "incomplete kyc",
     "pan link",
     "verify account",
     "re-activate",
@@ -78,27 +151,70 @@ KYC_KEYWORDS = [
     "aadhaar link",
     "complete kyc",
     "kyc suspended",
+    "netbanking blocked",
+    "account deactivated",
+    "update your kyc",
+    "complete your kyc",
+    "kyc verification",
 ]
 
 JOB_KEYWORDS = [
     "work from home",
     "daily income",
-    "like youtube videos",
+    "like youtube",
+    "like videos",
+    "rating hotels",
+    "google maps review",
     "telegram task",
     "earn ₹",
+    "earn rs",
     "part time job",
+    "part-time job",
     "daily payout",
     "subscribe and earn",
+    "simple task",
+    "earn 1000",
+    "earn 2000",
+    "earn 3000",
+    "earn 5000",
+    "per day from home",
+    "work 1-2 hours",
+    "no experience needed",
+    "daily salary",
+    "contact hr",
+    "online job",
 ]
 
 COURIER_BILL_KEYWORDS = [
     "parcel on hold",
     "customs clearance",
     "electricity bill",
+    "electricity office",
+    "electricity officer",
+    "power will be disconnected",
     "connection will be disconnected",
     "power cut tonight",
+    "power cut",
     "unpaid electricity",
     "delivery package held",
+    "package could not be delivered",
+    "delivery attempt failed",
+    "reschedule delivery",
+    "shipment on hold",
+    "gas bill overdue",
+    "water bill overdue",
+    "parcel tracking",
+    "package tracking",
+    "cannot be delivered",
+    "could not be delivered",
+    "delivery failed",
+    "unpaid bill",
+    "bill update",
+    "bill pending",
+    "bill was not updated",
+    "disconnected tonight",
+    "light cut",
+    "bijli",
 ]
 
 REMOTE_APP_KEYWORDS = [
@@ -118,7 +234,79 @@ GREETING_KEYWORDS = [
     "dear valued member",
     "dear client",
     "dear account holder",
+    "dear sir/madam",
+    "dear winner",
+    "dear beneficiary",
+    "valued customer",
 ]
+
+INVESTMENT_KEYWORDS = [
+    "guaranteed returns",
+    "double your money",
+    "risk free investment",
+    "high returns guaranteed",
+    "invest now",
+    "crypto profit",
+    "forex trading",
+    "earn daily profit",
+    "minimum investment",
+    "100% profit",
+    "200% return",
+    "passive income guaranteed",
+    "no risk involved",
+    "money doubling",
+    "bitcoin profit",
+    "trading signals",
+]
+
+SEXTORTION_KEYWORDS = [
+    "recorded you",
+    "your private video",
+    "your private photos",
+    "webcam footage",
+    "intimate video",
+    "compromising video",
+    "send to all contacts",
+    "share with contacts",
+    "send bitcoin",
+    "pay in bitcoin",
+    "your browsing history",
+    "visited adult",
+    "adult website",
+    "i have your photos",
+    "i recorded you",
+    "i hacked your",
+]
+
+PHISHING_ACTION_KEYWORDS = [
+    "click here",
+    "click the link",
+    "click link",
+    "click below",
+    "click the button",
+    "tap here",
+    "tap the link",
+    "tap link",
+    "tap below",
+    "open link",
+    "follow the link",
+    "follow link",
+    "visit the link",
+    "visit link",
+    "log in here",
+    "sign in here",
+    "click to verify",
+    "click to confirm",
+    "click to update",
+    "click to secure",
+    "click to unlock",
+    "click to restore",
+    "update address",
+    "verify here",
+    "claim here",
+    "track here",
+]
+
 
 SHORTENER_DOMAINS = [
     "bit.ly",
@@ -217,7 +405,7 @@ def analyze_text_rules(text_content: str):
 
     threat_matches, threat_spans = check_keyword_matches(text_content, THREAT_KEYWORDS)
     if threat_matches:
-        signals.append(Signal(id="text_threat", category="urgency", title="Threat or Fear Tactic", detail="Uses intimidation, legal threats, or arrest warnings.", weight=15, evidence=", ".join(set(threat_matches))))
+        signals.append(Signal(id="text_threat", category="urgency", title="Threat or Fear Tactic", detail="Uses intimidation, legal threats, or arrest warnings.", weight=20, evidence=", ".join(set(threat_matches))))
         highlights.extend([TextHighlight(start=s, end=e, category="urgency") for s, e in threat_spans])
 
     cred_matches, cred_spans = check_credential_group(text_content)
@@ -236,28 +424,43 @@ def analyze_text_rules(text_content: str):
     upi_addresses = [m for m in re.findall(r"\b[a-zA-Z0-9.\-_]{2,40}@[a-zA-Z]{3,20}\b", text_content) if not m.endswith(".com") and not m.endswith(".in")]
     if payment_matches or upi_addresses:
         evidence = ", ".join(set(payment_matches + upi_addresses))
-        signals.append(Signal(id="text_payment", category="money", title="Direct Payment or Fee Request", detail="Demands advance payment, processing fees, or money transfers.", weight=15, evidence=evidence))
+        signals.append(Signal(id="text_payment", category="money", title="Direct Payment or Fee Request", detail="Demands advance payment, processing fees, or money transfers.", weight=18, evidence=evidence))
         highlights.extend([TextHighlight(start=s, end=e, category="money") for s, e in payment_spans])
 
     kyc_matches, kyc_spans = check_keyword_matches(text_content, KYC_KEYWORDS)
     if kyc_matches:
-        signals.append(Signal(id="text_kyc", category="credentials", title="KYC or Account Suspension Warning", detail="Asks to verify identity or PAN/Aadhaar under threat of blocking.", weight=15, evidence=", ".join(set(kyc_matches))))
+        signals.append(Signal(id="text_kyc", category="credentials", title="KYC or Account Suspension Warning", detail="Asks to verify identity or PAN/Aadhaar under threat of blocking.", weight=22, evidence=", ".join(set(kyc_matches))))
         highlights.extend([TextHighlight(start=s, end=e, category="credentials") for s, e in kyc_spans])
 
     job_matches, job_spans = check_keyword_matches(text_content, JOB_KEYWORDS)
     if job_matches:
-        signals.append(Signal(id="text_job", category="money", title="Job or Daily Task Scam", detail="Offers unrealistic daily payouts for simple social media or Telegram tasks.", weight=14, evidence=", ".join(set(job_matches))))
+        signals.append(Signal(id="text_job", category="money", title="Job or Daily Task Scam", detail="Offers unrealistic daily payouts for simple social media or Telegram tasks.", weight=20, evidence=", ".join(set(job_matches))))
         highlights.extend([TextHighlight(start=s, end=e, category="money") for s, e in job_spans])
 
     courier_matches, courier_spans = check_keyword_matches(text_content, COURIER_BILL_KEYWORDS)
     if courier_matches:
-        signals.append(Signal(id="text_courier_bill", category="urgency", title="Courier or Utility Bill Threat", detail="Claims parcels are held or electricity will be cut off tonight.", weight=14, evidence=", ".join(set(courier_matches))))
+        signals.append(Signal(id="text_courier_bill", category="urgency", title="Courier or Utility Bill Threat", detail="Claims parcels are held or electricity will be cut off tonight.", weight=20, evidence=", ".join(set(courier_matches))))
         highlights.extend([TextHighlight(start=s, end=e, category="urgency") for s, e in courier_spans])
 
     remote_matches, remote_spans = check_keyword_matches(text_content, REMOTE_APP_KEYWORDS)
     if remote_matches:
         signals.append(Signal(id="text_remote_access", category="technical", title="Remote Access App Request", detail="Instructs to install remote control apps that allow screen capture.", weight=20, evidence=", ".join(set(remote_matches))))
         highlights.extend([TextHighlight(start=s, end=e, category="technical") for s, e in remote_spans])
+
+    invest_matches, invest_spans = check_keyword_matches(text_content, INVESTMENT_KEYWORDS)
+    if invest_matches:
+        signals.append(Signal(id="text_investment", category="money", title="Investment or Trading Scam", detail="Promises guaranteed returns or unrealistic profits from trading or investments.", weight=22, evidence=", ".join(set(invest_matches))))
+        highlights.extend([TextHighlight(start=s, end=e, category="money") for s, e in invest_spans])
+
+    sextort_matches, sextort_spans = check_keyword_matches(text_content, SEXTORTION_KEYWORDS)
+    if sextort_matches:
+        signals.append(Signal(id="text_sextortion", category="urgency", title="Sextortion or Blackmail Threat", detail="Threatens to share private or intimate content unless payment is made.", weight=25, evidence=", ".join(set(sextort_matches))))
+        highlights.extend([TextHighlight(start=s, end=e, category="urgency") for s, e in sextort_spans])
+
+    phish_action_matches, phish_action_spans = check_keyword_matches(text_content, PHISHING_ACTION_KEYWORDS)
+    if phish_action_matches:
+        signals.append(Signal(id="text_phishing_action", category="link", title="Suspicious Call to Action", detail="Urges you to click a link, button, or take immediate action through a URL.", weight=10, evidence=", ".join(set(phish_action_matches))))
+        highlights.extend([TextHighlight(start=s, end=e, category="link") for s, e in phish_action_spans])
 
     greeting_matches, greeting_spans = check_keyword_matches(text_content, GREETING_KEYWORDS)
     if greeting_matches:
@@ -277,5 +480,10 @@ def analyze_text_rules(text_content: str):
         signals.append(Signal(id="text_phone_action", category="sender", title="Unverified Phone Call Request", detail="Directs you to call an unverified phone number immediately.", weight=8, evidence=phone_evidence))
         if phone_start >= 0:
             highlights.append(TextHighlight(start=phone_start, end=phone_end, category="sender"))
+
+    # Combo boost: when 3+ distinct scam categories fire, it's almost certainly a scam
+    scam_categories = {s.category for s in signals if s.weight >= 8}
+    if len(scam_categories) >= 3:
+        signals.append(Signal(id="text_combo_boost", category="multi", title="Multiple Scam Indicators Combined", detail=f"This content triggers {len(scam_categories)} distinct risk categories, a strong sign of a scam.", weight=15, evidence=f"Categories: {', '.join(sorted(scam_categories))}"))
 
     return signals, highlights

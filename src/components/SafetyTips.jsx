@@ -20,7 +20,7 @@ export default function SafetyTips({ safeActions, result, originalContent }) {
     if (!result) return
     const textReport = `🚨 SCAMSCAN REPORT
 Verdict: ${result.verdict} (Risk Score: ${result.score}/100)
-Category: ${result.scam_type}
+Category: ${result.scam_type === "none" ? "Safe / Clean" : result.scam_type.replace("_", " ")}
 Summary: ${result.summary}
 
 Top Reasons:

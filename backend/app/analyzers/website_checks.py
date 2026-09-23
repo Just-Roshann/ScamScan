@@ -107,7 +107,7 @@ def inspect_html_elements(raw_html: str, final_url: str):
 def safely_fetch_website(target_url: str):
     formatted_url = target_url if target_url.startswith("http") else "http://" + target_url
     client = httpx.Client(
-        timeout=5.0,
+        timeout=3.0,
         follow_redirects=True,
         max_redirects=5,
         headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"},
@@ -126,7 +126,18 @@ def analyze_website_content(target_url: str):
         raw_html, final_url = safely_fetch_website(target_url)
     except Exception as fetch_error:
         url_result = analyze_single_url(target_url)
-        return list(url_result.signals), [], [url_result], f"Could not fetch website: {str(fetch_error)}"
+        signals = list(url_result.signals)
+        clean_domain_text = target_url.replace("-", " ").replace(".", " ").replace("/", " ").replace("https", "").replace("http", "").replace("www", "")
+        text_signals, _ = analyze_text_rules(clean_domain_text)
+        for sig in text_signals:
+            if sig.id not in {s.id for s in signals}:
+                signals.append(sig)
+        content_desc = (
+            f"Target URL: {target_url}\n"
+            f"Note: Live website connection could not be established ({str(fetch_error)}). "
+            f"Domain structure, TLD reputation, and suspicious brand/keyword patterns are being analyzed."
+        )
+        return signals, [], [url_result], content_desc
 
     final_domain = get_registered_domain(final_url)
     if initial_domain and final_domain and initial_domain.lower() != final_domain.lower():

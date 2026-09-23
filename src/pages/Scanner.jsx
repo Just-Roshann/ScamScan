@@ -225,7 +225,7 @@ export default function Scanner({ setActivePage }) {
                 <div className="md:col-span-2 space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="px-3 py-1 rounded-full text-xs font-bold bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-300 border border-blue-200 dark:border-blue-800 uppercase tracking-wide">
-                      Category: {result.scam_type.replace("_", " ")}
+                      Category: {result.scam_type === "none" ? "Safe / Clean" : result.scam_type.replace("_", " ")}
                     </span>
                     <span className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10 flex items-center gap-1 font-mono">
                       <Clock className="w-3 h-3 text-blue-600 dark:text-cyan-400" />
