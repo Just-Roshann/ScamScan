@@ -13,4 +13,9 @@ PRIMARY_MODEL = "llama-3.3-70b-versatile"
 FALLBACK_MODEL = "llama-3.1-8b-instant"
 FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN", "http://localhost:5173")
 PORT = int(os.getenv("PORT", "8000"))
-DATABASE_PATH = backend_dir / "scamscan.db"
+if os.getenv("VERCEL"):
+    DATABASE_PATH = Path("/tmp/scamscan.db")
+    os.environ["TLDEXTRACT_CACHE"] = "/tmp/tldextract"
+else:
+    DATABASE_PATH = backend_dir / "scamscan.db"
+
