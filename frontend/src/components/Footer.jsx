@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { createPortal } from "react-dom"
-import { Shield, Github, Twitter, Linkedin, Youtube, PhoneCall, Copy, Check, ExternalLink, X } from "lucide-react"
+import { Shield, Github, Linkedin, PhoneCall, Copy, Check, ExternalLink, X } from "lucide-react"
 
 export default function Footer({ setActivePage }) {
   const [showHelplineModal, setShowHelplineModal] = useState(false)
@@ -75,7 +75,7 @@ export default function Footer({ setActivePage }) {
 
           <div className="flex items-center gap-3">
             <a
-              href="https://github.com"
+              href="https://github.com/Just-Roshann/ScamScan"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
@@ -84,31 +84,13 @@ export default function Footer({ setActivePage }) {
               <Github className="w-4 h-4" />
             </a>
             <a
-              href="https://x.com"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="X"
-              className="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/5 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/10 transition-colors"
-            >
-              <Twitter className="w-4 h-4" />
-            </a>
-            <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/roshansajnani-26-02-08-1166-seltos/"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
               className="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/5 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/10 transition-colors"
             >
               <Linkedin className="w-4 h-4" />
-            </a>
-            <a
-              href="https://youtube.com"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="YouTube"
-              className="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/5 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/10 transition-colors"
-            >
-              <Youtube className="w-4 h-4" />
             </a>
           </div>
         </div>
